@@ -42,3 +42,11 @@ r s
 - Add validation to Page model
 - Add run_check! to Page model
 - Add Result association to Page model
+
+## Add Scraper UI Controllers & Actions
+
+- Add results to pages show view
+- Create a result partial
+- Add check resource to routes
+- Create checks controller
+- Add button on show page to trigger controller action
