@@ -50,3 +50,50 @@ r s
 - Add check resource to routes
 - Create checks controller
 - Add button on show page to trigger controller action
+
+## Updating the UI
+
+- Install tailwind gem
+
+```sh
+bundle add tailwindcss-rails
+r tailwindcss:install
+bin/dev
+```
+
+- Update views with new styling
+- Add migration to name urls
+
+```sh
+r g migration AddNameToPages name
+r db:migrate
+```
+
+- Add name to form
+- Add name to permitted params in pages controller
+- Add validation to page model
+- Update records with names
+- Add page name to partial
+- Grab check and x icon from heroicons and ascii character for chevron as part of these changes
+- Adjust view UI, including headers, breadcrumbs, and forms
+- Add last result to index page
+- Add migration to cache last result (to eliminate N+1)
+
+```sh
+r g migration AddLastResultToPages last_result_id:integer
+r db:migrate
+```
+
+- Add relation to page model
+- Add it to the update action
+- Update the view
+- Update the index action to include the last result
+- Backfill the data
+
+```sh
+r c
+```
+
+```ruby
+Page.find_each { |page| page.update(last_result: page.results.order(created_at: :desc).first) }
+```
