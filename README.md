@@ -97,3 +97,38 @@ r c
 ```ruby
 Page.find_each { |page| page.update(last_result: page.results.order(created_at: :desc).first) }
 ```
+
+## Sending Emails for Successful Results
+
+- Create a rake task in `lib/tasks/pages.rake`
+- Add wrapper method in Page model
+- Move logic into Result model
+- Generate new mailer
+
+```sh
+r g mailer UserMailer success
+```
+
+- Update test mailer preview
+- Visit `localhost:3000/rails/mailers/user_mailer/success`
+- Run the rake task
+
+```sh
+r -T
+r pages:run_checks
+```
+
+- Install `letter_opener_web` gem in development group
+
+```sh
+bundle add letter_opener_web --group development
+```
+
+- Update development config to use letter_opener
+- Mount engine to routes
+- Visit `localhost:3000/letter_opener`
+- Run page checks again
+
+```sh
+r pages:run_checks
+```
