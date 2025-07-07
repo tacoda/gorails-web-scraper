@@ -67,3 +67,5 @@ gem "tailwindcss-rails", "~> 4.2"
 gem "letter_opener_web", "~> 3.0", group: :development
 
 gem "dockerfile-rails", ">= 1.7", group: :development
+
+gem "postmark-rails", "~> 0.22.1"

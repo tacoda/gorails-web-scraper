@@ -153,3 +153,26 @@ fly launch
 - We _could_ set up a cron to run this job
 
 There are several approaches, but we will skip this for practical reasons.
+
+## Sending emails in Production using Postmark
+
+- Sign up with Postmark (many alternatives, e.g. Sendgrid)
+- Grab API token
+
+```sh
+r credentials:edit --environment production
+```
+
+- Update production config
+- Add postmark gem
+
+```sh
+bundle add postmark-rails
+```
+
+- Add `RAILS_MASTER_KEY` to environment (set with credentials step)
+- Set secret for fly
+
+```sh
+fly secrets set RAILS_MASTER_KEY=fakekey
+```
