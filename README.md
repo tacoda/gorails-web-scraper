@@ -188,3 +188,14 @@ r db:migrate
 
 - Update ApplicationMailer with the correct from address
 - Test out in a shell in production
+- Add sender signature to Postmark account
+
+```sh
+fly console
+```
+
+```ruby
+page = Page.create!(name:, url:, check_type:, selector:, match_text:)
+page.result.create!
+UserMailer.with(result: Result.last).success.deliver
+```

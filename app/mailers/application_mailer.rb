@@ -1,4 +1,4 @@
 class ApplicationMailer < ActionMailer::Base
-  default from: "from@tacoda-web-scraper.fly.dev"
+  default from: "ian.johnson@cer.bo"
   layout "mailer"
 end
