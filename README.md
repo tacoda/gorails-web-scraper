@@ -176,3 +176,10 @@ bundle add postmark-rails
 ```sh
 fly secrets set RAILS_MASTER_KEY=fakekey
 ```
+
+- Install solid queue to send emails in production
+
+```sh
+r generate solid_queue:install
+r db:migrate
+```
