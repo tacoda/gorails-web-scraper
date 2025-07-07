@@ -150,3 +150,6 @@ fly launch
 
 - Update Dockerfile packages
 - Make last result optional in the Page model
+- We _could_ set up a cron to run this job
+
+There are several approaches, but we will skip this for practical reasons.
