@@ -187,6 +187,7 @@ r db:migrate
 - Could use a separate process to run the queue, but puma has a plugin for it by adding it to `config/puma.rb`
 
 - Update ApplicationMailer with the correct from address
+- Update UserMailer with the correct to address
 - Test out in a shell in production
 - Add sender signature to Postmark account
 
@@ -195,7 +196,5 @@ fly console
 ```
 
 ```ruby
-page = Page.create!(name:, url:, check_type:, selector:, match_text:)
-page.result.create!
 UserMailer.with(result: Result.last).success.deliver
 ```

@@ -6,6 +6,6 @@ class UserMailer < ApplicationMailer
   #
   def success
     @page = params[:result].page
-    mail to: "tacoda@hey.com"
+    mail to: "ian.johnson@cer.bo"
   end
 end
