@@ -183,3 +183,5 @@ fly secrets set RAILS_MASTER_KEY=fakekey
 r generate solid_queue:install
 r db:migrate
 ```
+
+- Could use a separate process to run the queue, but puma has a plugin for it by adding it to `config/puma.rb`
