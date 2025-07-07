@@ -132,3 +132,21 @@ bundle add letter_opener_web --group development
 ```sh
 r pages:run_checks
 ```
+
+## Deploy the app
+
+- Update the database to postgres
+
+```sh
+r db:system:change --to postgresql
+bundle
+```
+
+- Deploy to fly.io
+
+```sh
+fly launch
+```
+
+- Update Dockerfile packages
+- Make last result optional in the Page model
